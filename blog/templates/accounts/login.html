@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+  Login
+{% endblock title %}
+
+{% block contents %}
+{% include "partials/navbar.html" %}
+  <div class="container">
+      <h1>Login</h1>
+      <p>Use Following Form to Login</p>
+      <form method="POST" novalidate>
+          {{forms.as_p}}
+          {% csrf_token %}
+          <button type="submit" class="btn btn-outline-success">Login</button>
+      </form>
+  </div>
+{% endblock contents %}
