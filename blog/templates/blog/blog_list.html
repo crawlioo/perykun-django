@@ -1,16 +1,26 @@
-{% extends 'blog/base.html' %}
-
-{% block title %}
-    blog list
-{% endblock title %}
-
+{% extends 'blog/base.html' %} {% block title %} blog list {% endblock title %}
 {% block contents %}
+
+<!-- navbar section -->
+{% include "partials/navbar.html" %}
+<!-- end navbar section -->
+
+<section>
+  <div class="container">
     <h2 class="title">Post List</h2>
-    <section>
-        <ul class="list-group">
-            {% for item in content %}
-                <li class="list-group-item">{{ item.title }} - {{ item.published }}</li>
-            {% endfor %}
-        </ul>
-    </section>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <ul class="list-group">
+      {% for item in blog_list %}
+      <li class="list-group-item">
+        <a href="{% url 'blog_detail' item.slug %}" style="text-decoration: none; color: black;">{{ item.title }} - {{ item.published }}</a>
+        <br />
+        <span class="badge rounded-pill bg-success">{{ item.author }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 {% endblock contents %}

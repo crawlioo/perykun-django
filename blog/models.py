@@ -10,6 +10,12 @@ class Blog(models.Model):
     published = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    class Meta:
+        db_table = ''
+        managed = True
+        verbose_name = 'Blog'
+        verbose_name_plural = 'Blog'
+
 
     def __str__(self) -> str:
         return f'{self.title} - {self.published}'
