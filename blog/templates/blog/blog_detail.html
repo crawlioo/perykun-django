@@ -9,5 +9,9 @@
      <h3 class="subhead">{{ content.title }}</h3>
      <p class="disabled"> Published at: {{ content.published }} by: {{ content.author }}</p>
      <section class="section">{{content.content}}</section>
+     <br>
+     <br>
+       <a href="{% url 'update_posts' content.slug %}" class="btn btn-outline-success">Edit Post</a>
+       <a href="{% url 'delete_posts' content.slug %}" class="btn btn-outline-danger">Delete Post</a>
   </div>
 {% endblock contents %}

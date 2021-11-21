@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Add New Post
+{% endblock title %}
+
+{% block contents %}
+  <h1 class="subtitle">Add New Posts</h1>
+    <div class="container justify-content-center">
+        <form method="post">
+            {% csrf_token %}
+            {{ blog | crispy }}
+            <button type="submit" class="btn btn-outline-info">Publish</button>
+        </form>
+    </div>
+{% endblock contents %}

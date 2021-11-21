@@ -1,18 +1,19 @@
 {% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}
-  Login
+  Register
 {% endblock title %}
 
 {% block contents %}
 {% include "partials/navbar.html" %}
   <div class="container">
-      <h1>Login</h1>
-      <p>Use Following Form to Login</p>
+      <h1>Register</h1>
+      <p>Use Following Form to Register</p>
       <form method="POST" novalidate>
-          {{forms.as_p}}
+          {{forms | crispy}}
           {% csrf_token %}
-          <button type="submit" class="btn btn-outline-success">Login</button>
+          <button type="submit" class="btn btn-outline-success">Register</button>
       </form>
   </div>
 {% endblock contents %}

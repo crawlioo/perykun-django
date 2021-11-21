@@ -1,0 +1,17 @@
+<nav class="nav-link">
+    <ul class="pagination">
+        <li class="page-item">
+            {% if page.has_previous %}
+              <a href="?page={{ page.previous_page_number }}" class="page-link">Previous Page</a>
+            {% endif %}
+        </li>
+        <li class="page-item">
+            <a class="page-link">Page {{ page.number }} of {{ page.paginator.num_pages }}</a>
+        </li>
+        <li class="page-item">
+            {% if page.has_next %}
+              <a href="?page={{ page.next_page_number }}" class="page-link">Next Page</a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>

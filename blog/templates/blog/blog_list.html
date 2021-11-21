@@ -8,6 +8,7 @@
 <section>
   <div class="container">
     <h2 class="title">Post List</h2>
+    <a class="btn btn-outline-danger" href="{% url 'add_posts' %}">Add Posts</a>
   </div>
 </section>
 <section>
@@ -23,4 +24,5 @@
     </ul>
   </div>
 </section>
+{% include "partials/pagination.html" with page=blog_list %}
 {% endblock contents %}

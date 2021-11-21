@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+  hello {{ forms.first_name }}
+{% endblock title %}
+
+{% block contents %}
+  <div class="container">
+      <h3>Hello {{ forms.username.text }} Your Account Created</h3>
+      <p class="subtitle">you can login <a href="{% url 'login' %}">Here</a></p>
+  </div>
+{% endblock contents %}

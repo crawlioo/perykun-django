@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Login
+{% endblock title %}
+
+{% block contents %}
+{% include "partials/navbar.html" %}
+  <div class="container">
+      <h1>Login</h1>
+      {% if form.errors %}
+      <p>Incorrect Username or Password</p>
+        {% else %}
+        <p>Login Following Forms</p>
+        <form action="" method="post">
+          {% csrf_token %}
+          {{ form | crispy}}
+          <input type="hidden" name="next" value="{{ next }}">
+          <button type="submit" class="btn btn-outline-success">Login</button>
+          <a href="{% url 'password-reset' %}" class="nav-link">Reset Your Password</a>
+        </form>
+      {% endif %}
+      </form>
+  </div>
+{% endblock contents %}
