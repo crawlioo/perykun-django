@@ -9,7 +9,6 @@ from blog.forms import *
 # Create your views here.
 from .models import Blog
 
-@login_required
 def homepage(request):
     blog = Blog.objects.all()
     paginator = Paginator(blog, 2)
@@ -25,7 +24,6 @@ def homepage(request):
 
 
 # blog detail
-@login_required
 def blog_detail(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
     return render(request, "blog/blog_detail.html", context={"content": blog})
