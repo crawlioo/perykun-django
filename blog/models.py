@@ -15,6 +15,7 @@ class Blog(models.Model):
         managed = True
         verbose_name = 'Blog'
         verbose_name_plural = 'Blog'
+        ordering = ['published']
 
 
     def __str__(self) -> str:
