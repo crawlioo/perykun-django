@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # third party package
     "crispy_forms",
     "crispy_bootstrap5",
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
