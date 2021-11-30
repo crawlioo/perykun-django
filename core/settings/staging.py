@@ -1,7 +1,7 @@
 # Staging Server Settings
 from .base import *
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['damp-reaches-35001.herokuapp.com']
 
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
