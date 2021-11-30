@@ -25,13 +25,12 @@ urlpatterns = [
     path('add-posts', add_article, name='add_posts'),
     path('update/<slug:slug>', update_article, name='update_posts'),
     path('delete/<slug:slug>', delete_article, name='delete_posts'),
-    path('api/', include('blog.api.routes')),
 
 ]
 
 # API Url Patterns
-# api_urlpattens = {
-#     path('api/', include('blog.api.routes')),
-# }
-#
-# urlpatterns += api_urlpattens
+api_urlpattens = [
+    path('api/blog/', include('blog.api.routes')),
+]
+
+urlpatterns += api_urlpattens
