@@ -30,7 +30,7 @@ urlpatterns = [
 
 # API Url Patterns
 api_urlpattens = [
-    path('api/blog/', include('blog.api.routes')),
+    path('api/v1/blog/', include('blog.api.routes')),
 ]
 
 urlpatterns += api_urlpattens
