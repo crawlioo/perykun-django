@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "rest_framework",
+    "rest_framework.authtoken",
     "drf_yasg",
 ]
 
@@ -148,20 +149,20 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 # REST FRAMEWORK CONFIG
 
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ]
+}
 
 # SWAGGER API DOCS
 SWAGGER_SETTINGS = {
-    'LOGIN_URL': reverse_lazy('admin:login'),
-    'LOGOUT_URL': '/admin/logout',
-    'PERSIST_AUTH': True,
-    'REFETCH_SCHEMA_WITH_AUTH': True,
-    'REFETCH_SCHEMA_ON_LOGOUT': True,
-
-    'DEFAULT_INFO': 'testproj.urls.swagger_info',
-
-    'SECURITY_DEFINITIONS': {
-        'basic': {
-            'type': 'basic'
-        }
-    },
+    "LOGIN_URL": reverse_lazy("admin:login"),
+    "LOGOUT_URL": "/admin/logout",
+    "PERSIST_AUTH": True,
+    "REFETCH_SCHEMA_WITH_AUTH": True,
+    "REFETCH_SCHEMA_ON_LOGOUT": True,
+    "DEFAULT_INFO": "testproj.urls.swagger_info",
+    "SECURITY_DEFINITIONS": {"basic": {"type": "basic"}},
 }
