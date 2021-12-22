@@ -38,12 +38,20 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
     # third party package
     "crispy_forms",
     "crispy_bootstrap5",
     "rest_framework",
     "rest_framework.authtoken",
+    "rest_auth",
     "drf_yasg",
+
+    # auth third party
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +63,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+# SITE ID
+SITE_ID = 1
 
 ROOT_URLCONF = "core.urls"
 
@@ -146,6 +157,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # CORS
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+# DJANGO REST AUTH CONFIG
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
 
 # REST FRAMEWORK CONFIG
 
